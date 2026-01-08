@@ -1,0 +1,111 @@
+.contact-form__content {
+    margin: 0 auto;
+    padding: 5px 15px;
+    max-width: 1230px;
+}
+
+.contact-form__heading {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 22px;
+    user-select: none;
+}
+
+.form {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.form__group {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.form__label--item {
+    user-select: none;
+    text-align: left;
+}
+
+.form__label--required {
+    position: relative;
+    padding-left: 5px;
+    color: rgb(255, 87, 87);
+    user-select: none;
+}
+
+.form__button--submit {
+    background-color: #876b54;
+    color: white;
+    padding: 8px 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.form__error {
+    height: 20px;
+    color: rgb(255, 87, 87);
+    user-select: none;
+}
+
+.form__group-content {
+    width: 70%;
+}
+
+.form__input--text input,
+.form__input--textarea textarea {
+    padding: 10px;
+    width: 100%;
+    height: 35px;
+    border-radius: 3px;
+    appearance: none;
+    user-select: none;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    color: #876b54;
+}
+
+.form__input--textarea textarea {
+    min-height: 120px;
+    resize: vertical;
+    color: #876b54;
+}
+
+.form__input--name,
+.form__input--tel {
+    display: flex;
+    gap: 10px;
+}
+.form__input--name input,
+.form__input--tel input {
+    padding: 10px;
+    width: 100%;
+    height: 35px;
+    border: none;
+    color: #876b54;
+    background-color: rgb(233, 233, 233);
+}
+
+.form__input--radio {
+    display: flex;
+    gap: 60px;
+    accent-color: #876b54;
+}
+
+.form__input--radio label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.form__select {
+    padding: 10px;
+    width: 50%;
+    border-radius: 3px;
+    display: block;
+    margin-left: 0;
+    border: none;
+    background-color: rgb(233, 233, 233);
+    cursor: pointer;
+    color: #876b54;
+}

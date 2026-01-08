@@ -1,0 +1,28 @@
+body{
+    font-family:
+        'Playfair Display',
+        'Noto Sans JP',
+        serif;
+        color: #876b54;
+        font-weight: 500;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px solid #ecddd0;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 10px 15px;
+    max-width: 1230px;
+}
+
+.header__logo {
+    color: #876b54;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px;
+}
