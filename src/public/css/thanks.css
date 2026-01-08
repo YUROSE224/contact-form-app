@@ -1,0 +1,58 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family:
+        'Playfair Display',
+        'Noto Sans JP',
+        serif;
+}
+
+.thanks__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.thanks__background{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 19rem;
+    color: rgba(183, 145, 112, 0.226);
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.thanks__heading {
+    position: relative;
+    z-index: 2;
+}
+
+.thanks__heading h2 {
+    font-size: 2rem;
+    color: #876b54;
+    margin: 0 0 40px 0;
+    user-select: none;
+}
+
+.thanks__button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #876b54;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+    user-select: none;
+}
+
+.thanks__button:hover {
+    background-color: #876b54;
+}

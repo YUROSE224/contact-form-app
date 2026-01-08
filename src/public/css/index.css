@@ -44,9 +44,16 @@
 }
 
 .form__error {
-    height: 20px;
-    color: rgb(255, 87, 87);
+    display: flex;
+    min-height: 24px;
+    color: rgb(255, 144, 144);
     user-select: none;
+    text-align: left;
+
+}
+
+.form__error-item {
+    display: inline-block;
 }
 
 .form__group-content {
