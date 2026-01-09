@@ -51,6 +51,14 @@ class ContactController extends Controller
         return view('thanks');
     }
 
+    public function register()
+    {
+        return view('register');
+    }
 
+    public function login()
+    {
+        return view('login');
+    }
 }
 

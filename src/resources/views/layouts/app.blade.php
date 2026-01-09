@@ -19,6 +19,7 @@
             <a class="header__logo" href="">
                 FashionablyLate
             </a>
+            @yield('header-extra')
         </div>
     </header>
 
