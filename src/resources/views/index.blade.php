@@ -23,10 +23,10 @@
                     <input type="text" name="first_name" placeholder="例）太郎" value="{{ old('first_name') }}">
                 </div>
                 <div class="form__error">
-                @error('first_name')
+                @error('last_name')
                     <span class="form__error-item"> {{ $message }} </span>
                 @enderror
-                @error('last_name')
+                @error('first_name')
                     <span class="form__error-item"> {{ $message }} </span>
                 @enderror
                 </div>
@@ -86,8 +86,12 @@
                     <input type="tel" name="phone3" placeholder="5678" value="{{ old('phone3') }}">
                 </div>
                 <div class="form__error">
-                    @if ($errors->has('phone1') || $errors->has('phone2') || $errors->has('phone3'))
-                        {{ $errors->first('phone1') ?? $errors->first('phone2') ?? $errors->first('phone3') }}
+                    @if ($errors->has('phone1'))
+                        {{ $errors->first('phone1') }}
+                    @elseif ($errors->has('phone2'))
+                        {{ $errors->first('phone2') }}
+                    @elseif ($errors->has('phone3'))
+                        {{ $errors->first('phone3') }}
                     @endif
                 </div>
             </div>
@@ -130,17 +134,17 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--select">
-                    <select class="form__select" name="content" value="{{ old('content') }}">
-                        <option value="" disabled selected>選択してください</option>
-                        <option value="1" {{ old('content') == '1' ? 'selected' : '' }}>商品のお届けについて</option>
-                        <option value="2" {{ old('content') == '2' ? 'selected' : '' }}>商品の交換について</option>
-                        <option value="3" {{ old('content') == '3' ? 'selected' : '' }}>商品トラブル</option>
-                        <option value="4" {{ old('content') == '4' ? 'selected' : '' }}>ショップへのお問い合わせ</option>
-                        <option value="5" {{ old('content') == '5' ? 'selected' : '' }}>その他</option>
+                    <select class="form__select" name="category_id">
+                        <option value="" >選択してください</option>
+                        <option value="1" {{ old('category_id') == '1' ? 'selected' : '' }}>商品のお届けについて</option>
+                        <option value="2" {{ old('category_id') == '2' ? 'selected' : '' }}>商品の交換について</option>
+                        <option value="3" {{ old('category_id') == '3' ? 'selected' : '' }}>商品トラブル</option>
+                        <option value="4" {{ old('category_id') == '4' ? 'selected' : '' }}>ショップへのお問い合わせ</option>
+                        <option value="5" {{ old('category_id') == '5' ? 'selected' : '' }}>その他</option>
                     </select>
                 </div>
                 <div class="form__error">
-                @error('content')
+                @error('category_id')
                     {{ $message }}
                 @enderror
                 </div>

@@ -16,15 +16,16 @@
             <table class="confirm-table__inner">
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お名前</th>
-                    <td class="confirm-table__text">
-                        <input type="text" name="first_name" value="{{ $contacts['first_name'] }}" readonly />
+                    <td class="confirm-table__text name confirm-table__header--name">
                         <input type="text" name="last_name" value="{{ $contacts['last_name'] }}" readonly />
+                        <input type="text" name="first_name" value="{{ $contacts['first_name'] }}" readonly />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">性別</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="gender" value="{{ $contacts['gender'] }}" readonly />
+                        <input type="text" name="gender" value="{{ \App\Models\Contact::GENDER_LABELS[$contacts['gender']] }}" readonly />
+                        <input type="hidden" name="gender" value="{{ $contacts['gender'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -54,7 +55,8 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="content" value="{{ $contacts['content'] }}" readonly />
+                    <input type="text" name="content" value="{{ $category->content }}" readonly />
+                    <input type="hidden" name="category_id" value="{{ $contacts['category_id'] }}">
                     </td>
                 </tr>
                 <tr class="confirm-table__row">

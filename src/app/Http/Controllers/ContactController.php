@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
+use App\Models\Category;
 class ContactController extends Controller
 {
     public function index()
@@ -24,16 +25,17 @@ class ContactController extends Controller
             'phone3',
             'address',
             'building',
-            'content',
+            'category_id',
             'detail',
         ]);
-
-        return view('confirm', compact('contacts'));
+        $request->session()->put('contacts', $contacts);
+        $category = Category::find($contacts['category_id']);
+        return view('confirm', compact('contacts', 'category'));
     }
 
-    public function store(ContactRequest $request)
+    public function store(Request $request)
     {
-        $contacts = $request->only
+        $contacts = $request->session()->get('contacts');
         ([
             'last_name',
             'first_name',
@@ -41,11 +43,14 @@ class ContactController extends Controller
             'email',
             'address',
             'building',
-            'content',
+            'category_id',
             'detail',
         ]);
-        $contacts['tel'] = $request->phone1 . $request->phone2 . $request->phone3;
+        $contacts['tel'] = $contacts['phone1'] . $contacts['phone2'] . $contacts['phone3'];
         Contact::create($contacts);
         return view('thanks');
     }
+
+
 }
+
