@@ -1,0 +1,194 @@
+body{
+    user-select: none;
+}
+
+.admin__content {
+    margin: 0 auto;
+    padding: 5px 15px;
+    max-width: 1230px;
+}
+
+.admin__heading {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 22px;
+    user-select: none;
+}
+
+.admin__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin__table th,
+.admin__table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.admin__table th {
+    background-color: #f5f5f5;
+}
+
+.detail-btn {
+    background-color: rgba(183, 145, 112, 0.132);
+    color: #c99f7e;
+    border-color: #c99f7e;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.detail-btn:hover {
+    background-color: #ffffff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal__content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal__header h3 {
+    margin: 0;
+}
+
+.modal__close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal__close:hover {
+    color: #333;
+}
+
+.modal__body {
+    padding: 20px;
+}
+
+.modal__table {
+    width: 100%;
+}
+
+.modal__table th,
+.modal__table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.modal__table th {
+    width: 40%;
+    color: #666;
+}
+
+.modal__footer {
+    padding: 15px 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.admin__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.export-btn {
+    background-color: #c4c4c4;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.export-btn:hover {
+    background-color: #6b5443;
+}
+
+.admin__pagination {
+    display: flex;
+    align-items: center;
+}
+
+.admin__pagination a,
+.admin__pagination span {
+    padding: 8px 12px;
+    margin: 0 3px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.admin__pagination .current {
+    font-weight: bold;
+    color: white;
+    background-color: #876b54;
+    border-color: #876b54;
+}
+
+.admin__pagination a:hover {
+    background-color: #f5f5f5;
+    border-color: #876b54;
+}
+
+.reset-btn {
+    background-color: #c99f7e;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.reset-btn:hover {
+    background-color: #c99f7e;
+}

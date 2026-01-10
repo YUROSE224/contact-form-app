@@ -22,4 +22,5 @@ Route::post('/thanks', [ContactController::class, 'store'])->name('store');
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'admin'])->name('admin');
+    Route::delete('/admin/{id}', [AuthController::class, 'destroy'])->name('admin.destroy');
 });
