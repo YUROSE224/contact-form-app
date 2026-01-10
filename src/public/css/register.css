@@ -1,64 +1,11 @@
-body{
-    background-color: rgba(183, 145, 112, 0.132);
-}
-
-.register-form__heading {
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: 22px;
-    user-select: none;
-}
-
-.form{
-    background-color: white;
-    width: 45%;
+.form {
     min-height: 700px;
-    padding: 35px 60px;
-    border-radius: 6px;
-    border: 1px solid #c99f7e;
-    margin: 0 auto 30px auto;
-    font-size: 30px;
-}
-
-.form__group-title {
-    user-select: none;
-    display: block;
-}
-
-.form__label--item {
-    user-select: none;
-    text-align: left;
-    font-size: 25px;
 }
 
 .form__group {
-    margin-top: 40px;
-    padding: 20px;
-}
-
-.form__group-content input {
-    width: 100%;
-    padding: 12px 15px;
-    background-color: rgb(233, 233, 233);
-    border: none ;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-    color: #876b54;
+    padding: 10px;
 }
 
 .form__button {
-display: flex;
-justify-content: center;
-margin: 40px;
-}
-
-.form__button-submit {
-    background-color: #876b54;
-    color: white;
-    padding: 8px 25px;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    user-select: none;
+    margin: 40px;
 }

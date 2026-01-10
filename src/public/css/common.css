@@ -30,7 +30,7 @@ body{
     user-select: none;
 }
 
-.btn-login, .btn-register {
+.btn-login, .btn-register, .btn-logout {
     position: absolute;
     right: 1px;
     top: 20px;
@@ -42,6 +42,7 @@ body{
     font-weight: bold;
 }
 
-.btn-login:hover, .btn-register:hover {
+.btn-login:hover, .btn-register:hover, .btn-logout-hover {
     cursor: pointer;
 }
+

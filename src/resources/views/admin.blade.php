@@ -5,11 +5,13 @@
 @endsection
 
 @section('header-extra')
-    <a href="{{ route('login') }}" class="btn-login">Login</a>
+    <form method="POST" action="/logout" style="display: inline;">
+        @csrf
+        <button type="submit" class="btn-logout">Logout</button>
+    </form>
 @endsection
 
-@section('title','ユーザー登録')
+@section('title','管理画面')
 
 @section('content')
 
-aaaaaaaaaaaa

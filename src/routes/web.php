@@ -19,18 +19,7 @@ use laravel\Fortify\Fortify;
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 Route::post('/thanks', [ContactController::class, 'store'])->name('store');
-Route::get('/register', [ContactController::class, 'register'])->name('register');
-Route::get('/admin',[Authcontroller::class,'admin']);
-Route::get('/login',[ContactController::class,'login'])->name('login');
-
-Fortify::registerView(function () {
-    return view('auth.register');
-});
-
-Fortify::loginView(function () {
-    return view('auth.login');
-});
 
 Route::middleware('auth')->group(function () {
-    Route::get('/admin', [AuthController::class, 'admin']);
+    Route::get('/admin', [AuthController::class, 'admin'])->name('admin');
 });
