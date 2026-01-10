@@ -1,0 +1,48 @@
+body{
+    font-family:
+        'Playfair Display',
+        'Noto Sans JP',
+        serif;
+        color: #876b54;
+        font-weight: 500;
+}
+
+.header {
+    background-color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 2px solid #ecddd0;
+}
+
+.header__inner {
+    position: relative;
+    margin: 0 auto;
+    padding: 10px 15px;
+    max-width: 1230px;
+}
+
+.header__logo {
+    display: inline-block;
+    color: #876b54;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px;
+    user-select: none;
+}
+
+.btn-login, .btn-register, .btn-logout {
+    position: absolute;
+    right: 1px;
+    top: 20px;
+    padding: 6px 30px;
+    background-color: rgba(183, 145, 112, 0.132);
+    color: #c99f7e;
+    text-decoration: none;
+    border: 2px solid #c99f7e;
+    font-weight: bold;
+}
+
+.btn-login:hover, .btn-register:hover, .btn-logout-hover {
+    cursor: pointer;
+}
+

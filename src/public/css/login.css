@@ -1,0 +1,11 @@
+.form {
+    min-height: 600px;
+}
+
+.form__group {
+    padding: 20px;
+}
+
+.form__button {
+    margin: 60px;
+}
