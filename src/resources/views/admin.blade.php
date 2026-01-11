@@ -64,7 +64,7 @@
         </div>
     </div>
 
-    <table>
+    <table class="admin__table">
         <thead>
             <tr>
                 <th>お名前</th>
