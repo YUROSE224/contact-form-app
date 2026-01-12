@@ -17,8 +17,16 @@ use laravel\Fortify\Fortify;
 */
 
 Route::get('/', [ContactController::class, 'index']);
+
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
+Route::get('/confirm', function () {
+    return redirect('/');
+});
+
 Route::post('/thanks', [ContactController::class, 'store'])->name('store');
+Route::get('/thanks', function () {
+    return redirect('/');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AuthController::class, 'admin'])->name('admin');
