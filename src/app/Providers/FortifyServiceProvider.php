@@ -13,20 +13,15 @@ use App\Http\Responses\LogoutResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
         $this->app->singleton(LogoutResponseContract::class, LogoutResponse::class);
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);
+
         Fortify::registerView(function () {
             return view('auth.register');
         });
@@ -35,10 +30,27 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.login');
         });
 
+        Fortify::authenticateUsing(function ($request) {
+            $request->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ], [
+                'email.required' => 'メールアドレスを入力してください',
+                'email.email' => 'メールアドレスはメール形式で入力してください',
+                'password.required' => 'パスワードを入力してください',
+            ]);
+
+            $user = \App\Models\User::where('email', $request->email)->first();
+
+            if ($user && \Illuminate\Support\Facades\Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+
+            return null;
+        });
 
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
-
             return Limit::perMinute(10)->by($email . $request->ip());
         });
     }
