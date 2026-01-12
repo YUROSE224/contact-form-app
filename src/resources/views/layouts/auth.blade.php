@@ -10,7 +10,7 @@
     <div class="@yield('heading-class')">
         <h2>@yield('form-title')</h2>
     </div>
-    <form class="form" action="@yield('form-action')" method="POST">
+    <form class="form" action="@yield('form-action')" method="POST" novalidate>
         @csrf
         @yield('form-fields')
         <div class="form__button">

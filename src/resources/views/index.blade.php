@@ -10,7 +10,7 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form class="form" action="/confirm" method="POST">
+    <form class="form" action="/confirm" method="POST" novalidate>
         @csrf
         <div class="form__group">
             <div class="form__group-title">
