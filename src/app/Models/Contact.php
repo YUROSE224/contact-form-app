@@ -26,14 +26,6 @@ class Contact extends Model
         3 => 'その他',
     ];
 
-    //public const CATEGORY_LABELS = [
-    //1 => '商品のお届けについて',
-    //2 => '商品の交換について',
-    //3 => '商品トラブル',
-    //4 => 'ショップへのお問い合わせ',
-    //5 => 'その他',
-    //];
-
     public function category()
     {
         return $this->belongsTo(Category::class);

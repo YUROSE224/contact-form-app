@@ -22,7 +22,8 @@
     <form action="/admin" method="GET" class="search-form">
         <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
         <select name="gender">
-            <option value="">性別</option>
+            <option value="" disabled selected>性別</option>
+            <option value="">全て</option>
             <option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>男性</option>
             <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
             <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
@@ -41,7 +42,7 @@
     </form>
 
     <div class="admin__actions">
-        <a href="/admin/export" class="export-btn">エクスポート</a>
+        <a href="/admin/export?{{ http_build_query(request()->query()) }}" class="export-btn">エクスポート</a>
         <div class="admin__pagination">
             @if ($contacts->lastPage() > 1)
 
@@ -71,6 +72,7 @@
                 <th>性別</th>
                 <th>メールアドレス</th>
                 <th>お問い合わせの種類</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
