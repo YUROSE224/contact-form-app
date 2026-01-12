@@ -42,7 +42,8 @@ body{
     font-weight: bold;
 }
 
-.btn-login:hover, .btn-register:hover, .btn-logout-hover {
+.btn-login:hover, .btn-register:hover, .btn-logout:hover {
     cursor: pointer;
+    background-color: #876b54;
 }
 
