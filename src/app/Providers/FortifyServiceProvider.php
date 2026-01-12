@@ -6,7 +6,9 @@ use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Validation\ValidationException;
 use Laravel\Fortify\Fortify;
 use Laravel\Fortify\Contracts\LogoutResponse as LogoutResponseContract;
 use App\Http\Responses\LogoutResponse;
@@ -31,7 +33,7 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::authenticateUsing(function ($request) {
-            $request->validate([
+            $validator = Validator::make($request->all(), [
                 'email' => ['required', 'email'],
                 'password' => ['required'],
             ], [
@@ -39,6 +41,10 @@ class FortifyServiceProvider extends ServiceProvider
                 'email.email' => 'メールアドレスはメール形式で入力してください',
                 'password.required' => 'パスワードを入力してください',
             ]);
+
+            if ($validator->fails()) {
+                throw new ValidationException($validator);
+            }
 
             $user = \App\Models\User::where('email', $request->email)->first();
 
