@@ -21,7 +21,7 @@
             <span class="form__label--item">メールアドレス</span>
         </div>
         <div class="form__group-content">
-            <input type="email" name="email" placeholder="例）test@example.com" value="{{ old('email') }}">
+            <input type="text" name="email" placeholder="例）test@example.com" value="{{ old('email') }}">
             <div class="form__error">
             @error('email')
                 <span class="form__error-item"> {{ $message }} </span>
