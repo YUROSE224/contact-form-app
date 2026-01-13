@@ -37,16 +37,15 @@ body {
     background-color: #f1f1f1c1;
 }
 
-
 .search-form input[type="text"] {
     width: 350px;
 }
 
-.search-form select[name="category_id"]{
+.search-form select[name="category_id"] {
     width: 250px;
 }
 
-.search-form select[type="gender"]{
+.search-form select[type="gender"] {
     width: 50px;
 }
 
@@ -197,7 +196,8 @@ body {
     border-radius: 8px;
     width: 90%;
     max-width: 800px;
-    height: 85vh;
+    max-height: 85vh;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }

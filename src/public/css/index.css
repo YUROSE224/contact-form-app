@@ -52,7 +52,9 @@
 }
 
 .form__error-item {
-    display: inline-block;
+    display: block;
+    width: 50%;
+    margin-right: 10px;
 }
 
 .form__group-content {
