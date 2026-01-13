@@ -2,14 +2,16 @@
 
 ## 環境構築
 
-### Dockerビルド
+### Docker ビルド
+
 ```bash
 git clone https://github.com/YUROSE224/contact-form-app.git
 cd contact-form-app
 docker compose up -d --build
 ```
 
-### Laravel環境構築
+### Laravel 環境構築
+
 ```bash
 docker compose exec php bash
 composer install
@@ -27,7 +29,7 @@ php artisan db:seed
 - nginx 1.21.1
 - Docker 28.3.3（自分の使用環境）
 
-## ER図
+## ER 図
 
 ![ER図](erd.drawio.png)
 
