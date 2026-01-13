@@ -19,7 +19,7 @@
         <h2>Admin</h2>
     </div>
 
-    <form action="/admin" method="GET" class="search-form">
+    <form action="/search" method="GET" class="search-form">
         <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
         <select name="gender">
             <option value="" disabled selected>性別</option>
@@ -38,14 +38,13 @@
         </select>
         <input type="date" name="date" value="{{ request('date') }}">
         <button type="submit">検索</button>
-        <a class="reset-btn" href="/admin">リセット</a>
+        <a class="reset-btn" href="/reset">リセット</a>
     </form>
 
     <div class="admin__actions">
-        <a href="/admin/export?{{ http_build_query(request()->query()) }}" class="export-btn">エクスポート</a>
+        <a href="/export?{{ http_build_query(request()->query()) }}" class="export-btn">エクスポート</a>
         <div class="admin__pagination">
             @if ($contacts->lastPage() > 1)
-
                 @if ($contacts->currentPage() > 1)
                     <a href="{{ $contacts->previousPageUrl() }}">&lt;</a>
                 @endif
@@ -91,8 +90,8 @@
                 <td>{{ $contact->email }}</td>
                 <td>{{ $contact->category->content }}</td>
                 <td>
-                <button class="detail-btn" data-id="{{ $contact->id }}">詳細</button>
-            </td>
+                    <button class="detail-btn" data-id="{{ $contact->id }}">詳細</button>
+                </td>
             </tr>
             @endforeach
         </tbody>
@@ -150,7 +149,7 @@
             </table>
         </div>
         <div class="modal__footer">
-            <form action="/admin/{{ $contact->id }}" method="POST">
+            <form action="/delete/{{ $contact->id }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="delete-btn">削除</button>
